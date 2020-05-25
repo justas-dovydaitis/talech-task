@@ -1,0 +1,133 @@
+@import "../../styles/theme";
+@import "../../styles/mixins";
+
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+    position: fixed;
+    z-index: 1100;
+
+    font-size: 1.8rem;
+
+    background-color: $component-bg-color;
+    box-shadow: 0 0 2.8rem 0.4rem $component-shadow-color;
+
+    @media (min-width: 992px) {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        padding: 1.5rem 2rem;
+
+        @supports not (-ms-ime-align: auto) {
+            justify-content: space-evenly;
+        }
+    }
+
+    &__logo-area {
+        display: flex;
+        align-items: center;
+
+        padding: 2rem 3rem;
+
+        @media (min-width: 992px) {
+            display: block;
+            padding: 0;
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+
+        margin-left: 3.5rem;
+
+        font-size: 3rem;
+        color: $logo-color;
+        text-transform: uppercase;
+
+        @media (min-width: 992px) {
+            margin-left: 0;
+        }
+    }
+
+    &__list {
+        display: none;
+
+        font-size: 2rem;
+        list-style-type: none;
+
+        &--expanded {
+            display: block;
+
+            @include reset-margin-padding;
+
+            list-style-type: none;
+
+            @media (min-width: 992px) {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 992px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+
+            margin: 0;
+        }
+    }
+
+    &__item {
+        @media (min-width: 992px) {
+            margin: 0;
+            padding: 1rem 2rem;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        padding: 1.2rem 2rem;
+
+        @media (min-width: 992px) {
+            padding: 0;
+        }
+
+        &--active {
+            color: $nav-mobile-link-active-color;
+            background-color: $nav-mobile-link-active-bg-color;
+
+            @media (min-width: 992px) {
+                color: $nav-link-active-color;
+
+                background-color: transparent;
+            }
+        }
+
+        &:hover {
+            color: $nav-mobile-link-hover-color;
+            background-color: $nav-mobile-link-hover-bg-color;
+
+            @media (min-width: 992px) {
+                color: $nav-link-hover-color;
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__menu-icon {
+        display: block;
+        padding-top: 0.2rem;
+        color: $nav-mobile-expand-icon-color;
+        font-size: 3rem;
+
+        @media (min-width: 992px) {
+            display: none;
+        }
+    }
+}

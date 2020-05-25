@@ -5,13 +5,15 @@ import Routes from '../Routes/Routes';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-import './App.css';
+import './App.scss';
 
 const App: React.FC = () => {
     return (
         <Router>
             <Header />
-            <Routes />
+            <div className="app">
+                <Routes />
+            </div>
             <Footer />
         </Router>
     );
