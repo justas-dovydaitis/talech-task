@@ -1,0 +1,15 @@
+@import "../../styles/theme";
+.page {
+    display: block;
+    position: relative;
+
+    min-width: 30rem;
+    min-height: 40rem;
+
+    padding: 1.8rem;
+    margin: 1.8rem 0;
+
+    background-color: $component-bg-color;
+    box-shadow: 0 0 1rem 0.5rem darken($component-bg-color, 12);
+
+}
